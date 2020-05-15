@@ -1,0 +1,54 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>person</mat-icon>
+      Regisztráció
+    </mat-card-title>
+
+
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="5">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" [(ngModel)]="email" name="username" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+        <td><mat-form-field class="example-full-width">
+          <input matInput placeholder="Jelszó" [(ngModel)]="password" type="password" name="password" required>
+        </mat-form-field></td>
+      </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Jelszó újra" [(ngModel)]="passwordAgain" type="password" name="passwordAgain" required>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Születési hely" [(ngModel)]="birthPlace" name="birthPlace" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+        <mat-form-field>
+          <mat-label>Születési dátum</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="birthDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        </tr>
+      </table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="register()" class="register-btn">Regisztráció</button>
+    <button mat-raised-button routerLink="/login" class="register-btn">Vissza</button>
+  </mat-card-actions>
+
+</mat-card>

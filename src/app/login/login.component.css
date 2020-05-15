@@ -1,0 +1,18 @@
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+.login-card {
+  border-style: solid;
+  border-color: #D2691E;
+  border-width: 1px;
+}
+
+#login-btn, #register-btn {
+  background-color: #D2691E;
+}
+
+mat-form-field {
+  display: block;
+}

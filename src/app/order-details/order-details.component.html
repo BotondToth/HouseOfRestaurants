@@ -1,0 +1,15 @@
+<div class="order-dialog">
+  <h2 mat-dialog-title>Rendelés részletei</h2>
+
+
+    <ng-container *ngFor="let topping of toppings">
+      <mat-dialog-content >
+        <mat-checkbox id="{{topping._id}}" class="topping-box" (change)="showOptions($event)">{{topping.name}}: {{topping.price}} Ft</mat-checkbox>
+      </mat-dialog-content>
+    </ng-container>
+
+  <mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Mégsem</button>
+    <button class="mat-raised-button mat-primary" (click)="order()">Kosárhoz adás</button>
+  </mat-dialog-actions>
+</div>

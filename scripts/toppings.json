@@ -1,0 +1,11 @@
+{"_id":{"$oid":"5ebc50d324a9133480ecd312"},"name":"Extra Sajt","price":{"$numberInt":"150"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd313"},"name":"Ketchup","price":{"$numberInt":"120"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd314"},"name":"Majonéz","price":{"$numberInt":"120"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd315"},"name":"Mustár","price":{"$numberInt":"201"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd316"},"name":"Chilli szósz","price":{"$numberInt":"249"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd317"},"name":"Kukorica","price":{"$numberInt":"299"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd318"},"name":"Ananász","price":{"$numberInt":"279"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd319"},"name":"Gomba","price":{"$numberInt":"389"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd31a"},"name":"Ananász","price":{"$numberInt":"279"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd31b"},"name":"Csirkemell","price":{"$numberInt":"499"}}
+{"_id":{"$oid":"5ebc50d324a9133480ecd31c"},"name":"Bacon","price":{"$numberInt":"400"}}

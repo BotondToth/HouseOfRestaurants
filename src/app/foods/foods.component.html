@@ -1,0 +1,74 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+<mat-toolbar class="navbar">
+  <span>House of Restaurants</span>
+  <button class="navbar-button" mat-button (click)="getAll()">Összes étel</button>
+  <button class="navbar-button" mat-button (click)="filterFood('pizza')">Pizzák</button>
+  <button class="navbar-button" mat-button (click)="filterFood('salad')">Saláták</button>
+  <button class="navbar-button" mat-button (click)="filterFood('sandwich')">Szendvicsek</button>
+  <span class="fill-space"></span>
+  <button mat-button class="shopping-cart-icon" (click)="logOut()">
+    <mat-icon aria-hidden="false" aria-label="exit-icon">exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="wrapper">
+  <mat-grid-list class="orders-list" cols="1" gutterSize="5px">
+    <h2 class="mat-h2">Kosár:</h2>
+    <mat-card class="order-card" *ngFor="let food of basket">
+      <mat-card-header>
+        <div mat-card-avatar class="food-header-image"></div>
+        <mat-card-title>{{food.name}}</mat-card-title>
+      </mat-card-header>
+      <br>
+      {{food.price}}
+    </mat-card>
+    <button class="mat-raised-button order-button" mat-button (click)="order()" [disabled]="!(basket.length !== 0)">
+      Rendelés
+    </button>
+  </mat-grid-list>
+
+  <mat-grid-list class="received-order-list" cols="1" gutterSize="5px">
+    <h2 class="mat-h2">Fogadott rendelések:</h2>
+    <mat-card class="order-card" *ngFor="let order of processedOrders">
+      <mat-card-header>
+        <div mat-card-avatar class="food-header-image"></div>
+        <mat-card-title>{{order.orderedAt}}</mat-card-title>
+      </mat-card-header>
+      <br>
+      Rendelés állapota: {{getStatusOfOrder(order.status)}}
+      <button class="mat-raised-button order-button" mat-button (click)="openDetailsModal(order)" [disabled]="!(basket.length !== 0)">
+        Részletek
+      </button>
+    </mat-card>
+
+  </mat-grid-list>
+
+  <mat-grid-list class="food-grid-list" cols="3" rowHeight="1:1.1" gutterSize="10px">
+    <mat-grid-tile *ngFor="let food of foods">
+      <mat-card class="food-card">
+        <mat-card-header>
+          <div mat-card-avatar class="food-header-image"></div>
+          <mat-card-title>{{food.name}}</mat-card-title>
+          <mat-card-subtitle>{{food.price}} Ft</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{food.image}}" alt="{{food.type}}" class="food-img">
+        <mat-card-content class="ingredients">
+          <p>{{food.ingredients}}</p>
+        </mat-card-content>
+
+        <mat-card-actions class="card-footer">
+          <div class=" text-muted text-center mt-4">
+            <button mat-button (click)="onBasketClick(food)"
+                    class="mat-focus-indicator mat-fab mat-button-base basket-btn">
+              <mat-icon class="shopping-cart-icon" aria-hidden="false" aria-label="shopping-cart-icon">
+                add_shopping_cart
+              </mat-icon>
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+

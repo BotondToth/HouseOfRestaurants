@@ -1,0 +1,34 @@
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>person</mat-icon>
+      Belépés
+    </mat-card-title>
+
+
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="5">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Jelszó" [(ngModel)]="password"type="password" name="password" required>
+          </mat-form-field></td>
+        </tr></table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()" id="login-btn">Login</button>
+  </mat-card-actions>
+  <mat-card-actions>
+    <button mat-raised-button routerLink="/register" id="register-btn">Regisztráció</button>
+  </mat-card-actions>
+</mat-card>
